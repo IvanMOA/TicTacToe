@@ -2,12 +2,82 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway";
+}
+#gray {
+  color: gray;
+}
+#white {
+  color: #f5f5f5;
+}
+// Vars
+$ttt-size: 80vw;
+$breakpoint-lg: 768px;
+$breakpoint-xl: 2560px;
+$breakpoint-sm: 586px;
+.playerTwo {
+  h1 {
+    color: red;
+  }
 }
 
-// Vars
-$ttt-size: 15em;
-
 .page {
+  .win {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    height: 15em;
+    display: none;
+    background: #999999;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    border: 2px solid #111111;
+    h4 {
+      color: #333333;
+      font-size: 2em;
+    }
+    .playagain {
+      align-self: center;
+      width: 8em;
+      height: 2em;
+      font-size: 1em;
+      outline: none;
+      border: none;
+      background: rgb(194, 194, 194);
+      margin: 0.4em;
+      position: relative;
+      top: 4em;
+    }
+  }
+
+  .fas,
+  .far {
+    font-size: 5em;
+    position: relative;
+    color: rgb(211, 211, 211);
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    .tictactoe {
+      max-width: 25em;
+      max-height: 25em;
+    }
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    .tictactoe {
+      max-width: 30em;
+      max-height: 30em;
+    }
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    .tictactoe {
+      max-width: 60em;
+      max-height: 60em;
+    }
+  }
+
   width: 100vw;
   height: 100vh;
   background: #222222;
@@ -15,23 +85,65 @@ $ttt-size: 15em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .name {
+    position: relative;
+    bottom: 1em;
+    color: #f2f2f2;
+    font-size: 1.5em;
+  }
+
   .tictactoe {
     width: $ttt-size;
     height: $ttt-size;
     display: grid;
     grid-template-columns: 0.3333fr 0.3333fr 0.3333fr;
     grid-template-rows: 0.3333fr 0.3333fr 0.3333fr;
+
     .cube {
       background: #555555;
       border: 3px solid #222222;
       outline: none;
+      border: none;
+      margin: 2px;
     }
-    @for $i from 1 to 9 {
-      .n#{$i} {
-        &:hover {
-          background: #999999;
-        }
-      }
+    // @for $i from 1 to 9 {
+    //   .n#{$i} {
+    //     &:hover {
+    //       background: #999999;
+    //     }
+    //   }
+    // }
+  }
+  .players {
+    position: relative;
+    top: 2em;
+  }
+  .playerOne,
+  .playerTwo {
+    text-align: center;
+    h1 {
+      display: inline;
+      color: #f5f5f5;
+    }
+  }
+  .playerOne {
+    .fas {
+      font-size: 2.3em;
+      color: #444444;
+      position: absolute;
+      transform: translateX(-0.9em);
+    }
+  }
+
+  .playerTwo {
+    h1 {
+      color: gray;
+    }
+    .far {
+      color: #444444;
+      font-size: 2em;
+      position: absolute;
+      transform: translateX(-1.15em);
     }
   }
 }

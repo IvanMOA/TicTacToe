@@ -7,9 +7,20 @@
     <title>TicTacToe</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/styles.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/f21cb0d568.js"></script>
   </head>
   <body>
     <div class="page">
+      <div class="win">
+        <h4 class="winmsg"></h4>
+        <button class="playagain">Play Again</button>
+      </div>
       <div class="name"><h1>TicTacToe</h1></div>
       <div class="tictactoe">
         <button class="cube n1"></button>
@@ -22,7 +33,23 @@
         <button class="cube n8"></button>
         <button class="cube n9"></button>
       </div>
+      <div class="players">
+        <div class="playerOne">
+          <i class="fas fa-times"></i>
+          <h1>Player1:</h1>
+          <h1 class="winsOne">
+            &nbsp;<span class="counterOne" id="white">0</span>
+          </h1>
+        </div>
+        <br />
+        <div class="playerTwo">
+          <i class="far fa-circle"></i>
+          <h1>Player2:</h1>
+          <h1 class="winsTwo">&nbsp;<span class="counterTwo">0</span></h1>
+        </div>
+      </div>
     </div>
+
     <!-- JS -->
     <script src="/js/logic.js"></script>
   </body>
